@@ -9,7 +9,9 @@ namespace Tamagotchi
     public HomeModule()
     {
       Get["/"] = _ => {
-        return View["index.cshtml"];
+        Pet.ClearDictionary();
+        Pet newPet = new Pet(0,0,0, "null");
+        return View["index.cshtml", newPet];
       };
 
       Post["/active-pet"] = _ => {
@@ -30,7 +32,7 @@ namespace Tamagotchi
         }
         else
         {
-          return View["dead.cshtml"];
+          return View["dead.cshtml", Pet.GetPet(0)];
         }
 
       };
@@ -48,7 +50,7 @@ namespace Tamagotchi
         }
         else
         {
-          return View["dead.cshtml"];
+          return View["dead.cshtml", Pet.GetPet(0)];
         }
       };
 
@@ -65,7 +67,7 @@ namespace Tamagotchi
         }
         else
         {
-          return View["dead.cshtml"];
+          return View["dead.cshtml", Pet.GetPet(0)];
         }
       };
     }

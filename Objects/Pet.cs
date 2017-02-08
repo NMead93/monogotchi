@@ -42,5 +42,41 @@ namespace Tamagotchi.Objects
       }
       return Alive;
     }
+
+    public bool Hungry()
+    {
+      if (Food < 3)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+
+    public bool Tired()
+    {
+      if (Sleep < 3)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+
+    public bool Sad()
+    {
+      if (Attention < 3)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
   }
 }

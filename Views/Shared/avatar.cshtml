@@ -1,16 +1,71 @@
-@if(Model == null && Model.Food < 3)
+@if(Model.Name == "null")
 {
-  <h1>Your pet is Hungry!</h1>
+  <h1>You have not made a pet</h1>
 }
-else if (Model.Attention < 3)
+else if (@Model.CheckLiving() == false)
 {
-  <h1>Your pet needs attention!
+  <div class="dead-pane">
+    <h1>Your pet is dead.</h1>
+    <form action="/">
+      <button type="submit" name="button">Make a new pet!</button>
+    </form>
+  </div>
 }
-else if (Model.Sleep < 3)
+else if (@Model.Hungry() == true)
 {
-  <h1>Your pet needs sleep!</h1>
+  <div class="body">
+    <div class="eye">
+      <div class="top-hat-top">
+        <div class="top-hat-bottom">
+          <div class="stache">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1>Your pet is hungry.</h1>
+}
+else if (@Model.Tired() == true)
+{
+  <div class="body">
+    <div class="eye">
+      <div class="top-hat-top">
+        <div class="top-hat-bottom">
+          <div class="stache">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1>Your pet is tired.</h1>
+}
+else if (@Model.Sad() == true)
+{
+  <div class="body">
+    <div class="eye">
+      <div class="top-hat-top">
+        <div class="top-hat-bottom">
+          <div class="stache">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sad-pane">
+    <h1>Your pet is sad.</h1>
+  </div>
 }
 else
 {
-  <h1>Your pet is content</h1>
+  <div class="body">
+    <div class="eye">
+      <div class="top-hat-top">
+        <div class="top-hat-bottom">
+          <div class="stache">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1>Your pet is content!</h1>
 }

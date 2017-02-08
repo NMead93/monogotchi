@@ -1,0 +1,50 @@
+.body {
+  height: 100px;
+  width: 100px;
+  margin:100px;
+  background-color: salmon;
+  border-radius: 5px;
+  position: relative;
+  top: 50px;
+}
+
+.top-hat-top {
+  height: 40px;
+  width: 30px;
+  background-color: black;
+  position: relative;
+  top: -70px;
+  left: 15px;
+}
+
+.top-hat-bottom {
+  height: 10px;
+  width: 50px;
+  background-color: black;
+  position: relative;
+  top: 30px;
+  left: -10px;
+}
+
+.stache {
+  height: 20px;
+  width: 30px;
+  border-radius: 40%;
+  box-shadow: 0 -6px 0 0 black;
+  position: relative;
+  top: 70px;
+
+}
+
+.eye {
+  height: 10px;
+  width: 10px;
+  background-color: #4c76a5;
+  position: relative;
+  top: 30px;
+  left: 18px;
+  border-radius: 2px;
+  box-shadow: 35px 0 0 0 #4c76a5,
+              0 0 0 2px black,
+              -10px 0 0 -1px black;
+}
