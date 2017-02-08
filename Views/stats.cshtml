@@ -1,0 +1,17 @@
+@{
+  Layout="Shared/_Layout";
+}
+<h1>Pet's Name: @Model.Name </h1>
+<h1>Hunger Level: @Model.Food </h1>
+<h1>Happiness Level: @Model.Attention </h1>
+<h1>Wakefulness Level: @Model.Sleep </h1>
+
+<form action="feed" method="post">
+  <button type="submit" name="button">Feed</button>
+</form>
+<form action="play" method="post">
+  <button type="submit" name="button">Play</button>
+</form>
+<form action="sleep" method="post">
+  <button type="submit" name="button">Sleep</button>
+</form>

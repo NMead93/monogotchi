@@ -1,0 +1,16 @@
+@if(Model == null && Model.Food < 3)
+{
+  <h1>Your pet is Hungry!</h1>
+}
+else if (Model.Attention < 3)
+{
+  <h1>Your pet needs attention!
+}
+else if (Model.Sleep < 3)
+{
+  <h1>Your pet needs sleep!</h1>
+}
+else
+{
+  <h1>Your pet is content</h1>
+}
