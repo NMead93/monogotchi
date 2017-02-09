@@ -1,6 +1,7 @@
 @{
   Layout="Shared/_Layout";
 }
+
 <h1>Pet's Name: @Model.Name </h1>
 <h1>Hunger Level: @Model.Food </h1>
 <h1>Happiness Level: @Model.Attention </h1>
@@ -15,3 +16,9 @@
 <form action="sleep" method="post">
   <button type="submit" name="button">Sleep</button>
 </form>
+
+<script>
+        setTimeout(function(){
+   window.location.replace("../stats");
+}, 5000);
+</script>

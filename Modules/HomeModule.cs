@@ -14,9 +14,22 @@ namespace Tamagotchi
         return View["index.cshtml", newPet];
       };
 
+      Get["/stats"] = _ => {
+        if (Pet.GetPet(0).CheckLiving())
+        {
+          return View["stats.cshtml", Pet.GetPet(0)];
+        }
+        else
+        {
+          Pet.End();
+          return View["dead.cshtml", Pet.GetPet(0)];
+        }
+      };
+
       Post["/active-pet"] = _ => {
         Pet.ClearDictionary();
-        Pet newPet = new Pet(5, 5, 5, Request.Form["name"]);
+        Pet newPet = new Pet(10, 10, 10, Request.Form["name"]);
+        Pet.Start();
         return View["stats.cshtml", newPet];
       };
 
@@ -32,9 +45,9 @@ namespace Tamagotchi
         }
         else
         {
+          Pet.End();
           return View["dead.cshtml", Pet.GetPet(0)];
         }
-
       };
 
       Post["/play"] = _ => {
@@ -50,6 +63,7 @@ namespace Tamagotchi
         }
         else
         {
+          Pet.End();
           return View["dead.cshtml", Pet.GetPet(0)];
         }
       };
@@ -67,6 +81,7 @@ namespace Tamagotchi
         }
         else
         {
+          Pet.End();
           return View["dead.cshtml", Pet.GetPet(0)];
         }
       };
